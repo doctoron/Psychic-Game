@@ -1,0 +1,46 @@
+h1 {
+    font-size: 48px;
+    color: #1c021fbd;
+    align-content: center;
+    
+}
+header {
+    align-items: center;
+    margin: 100px;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+ul {
+    display: flex;
+    list-style:none;
+    padding: 0;
+}
+li {
+    padding: 20px;
+}
+p {
+    color: black;
+}    
+#game,
+#psychic-image {
+    width: 300px;
+    height: 300px;
+}
+#game {
+    align-content: center;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 200px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.container {
+    background: image("assets/images/Psychic1.jpg");
+
+}
+@media screen and (max-width:800px) {
+    ul {
+        flex-direction: column;
+    }
+}

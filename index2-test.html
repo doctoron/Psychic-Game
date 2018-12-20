@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Psychic Number Guess Game</title>
+</head>
+<body>
+    <script>
+
+// Declare variables
+    // var answer=3;  Used for testing
+    var guess;
+
+// Computer generated guess
+    numberRange=[1,2,3,4,5,6,7,8,9,10];
+    
+    
+    console.log(numberRange);
+    console.log(answer);
+    
+    alert("You have 10 guesses.  Guess 1-10");
+    for (i = 0; i < 10; i++) {
+    let answer = numberRange[Math.floor(Math.random() * numberRange.length)];
+    guess = prompt("What's your guess?");
+    if(answer == guess) {
+        alert("You guessed correctly!");
+    }else{
+        let answer = answer[Math.floor(Math.random() * numberRange.length)];
+        guess=alert(`Sorry, the correct number is ${answer}. Please try again.`){
+
+        }    
+    }
+
+
+}    
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

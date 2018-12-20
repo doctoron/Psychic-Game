@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Psychic Game</title>
+</head>
+<body>
+<div id="stats">
+      
+        <p>Wins:<span class="win-count"></span></p>
+        <p>Losses:<span class="loss-count"></span></p>
+        <p>Guesses Left:<span class="guesses-left"></span></p>
+        
+</div>
+
+
+<script>
+    numRange=[1,2,3,4,5,6,7,8,9,10];        
+    var guessesLeft=3
+    var wins = 0;
+    var losses=0;
+    var guess;
+    let answer=numRange[Math.floor(Math.random() * numRange.length)]; 
+    
+    let test=Math.floor(Math.random * numRange.length);
+    console.log(test);
+    
+    for (i = 0; i < 3; i++) {
+        alert(`You have ${guessesLeft} guesses left.  Guess from 1-10`);
+        guess = prompt("What's your guess?");
+        if(guess != answer) {
+            guessesLeft-1;
+            return update();
+            // document.getElementByClass("guesses-left").innerHTML(`${guessesLeft}`);
+            alert("Sorry, that's not correct, try again.");
+            prompt(`You have ${guessesLeft} guesses left. Guess from 1-10`);
+        }else if(guessesLeft === 0) {
+            losses++;
+            return update();
+            // document.getElementByClass("guesses-left").innerHTML(`${guessesLeft}`);
+            // document.getElementByClass("losses").innerHTML(`${losses}`);
+            prompt("You are NOT psychic, keep your day job!");
+        }else{
+            wins++;
+            return update();
+            // document.getElementByClass("guesses-left").innerHTML(`${guessesLeft}`);
+            // document.getElementByClass("wins").innerHTML(`${wins}`);
+            alert("You guessed correctly and must be Psychic!");
+        }
+        
+        let update=function(){
+        document.getElementByClass("guesses-left").innerHTML(`${guessesLeft}`);
+        document.getElementByClass("wins").innerHTML(`${wins}`);
+        document.getElementByClass("losses").innerHTML(`${losses}`);
+        }
+        // console.log("User Guess: "+ guess);
+        // console.log(i + 1);
+    }
+    
+    
+
+
+
+
+
+
+    </script>
+</body>
+</html>
